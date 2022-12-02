@@ -34,3 +34,10 @@ myClickJustFocuses = False
 
 -- Width of window border in pixels
 myBorderWidth = 1
+
+-- Set ModMask to super key
+-- mod1Mask = left alt
+-- mod2Mask =
+-- mod3Mask = right alt
+-- mod4Mask = super
+myModMask = mod4Mask
