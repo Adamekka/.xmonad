@@ -166,6 +166,7 @@ myLogHook = return ()
 myStartupHook = do
   spawnOnce "nitrogen --restore &"
   spawnOnce "picom &"
+  spawnOnce "xmobar &"
 
 main = do
   xmonad $ docks defaults
