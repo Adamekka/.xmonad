@@ -11,6 +11,7 @@ import XMonad.Config.Gnome
 import XMonad.Config.Kde
 import XMonad.Config.Xfce
 import qualified XMonad.StackSet as W
+import XMonad.Util.SpawnOnce
 
 desktop "gnome" = gnomeConfig
 desktop "kde" = kde4Config
@@ -160,7 +161,9 @@ myEventHook = mempty
 myLogHook = return ()
 
 -- Startup hook
-myStartupHook = return ()
+myStartupHook = do
+  spawnOnce "nitrogen --restore &"
+  spawnOnce "picom &"
 
 main = do
   xmonad defaults
