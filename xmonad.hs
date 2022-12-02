@@ -156,3 +156,10 @@ myManageHook =
       resource =? "desktop_window" --> doIgnore,
       resource =? "kdesktop" --> doIgnore
     ]
+
+-- Event handling
+myEventHook = mempty
+-- Status bars and logging
+myLogHook = return ()
+-- Startup hook
+myStartupHook = return ()
