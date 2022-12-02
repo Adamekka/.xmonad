@@ -1,5 +1,6 @@
 -- default desktop configuration for Fedora
 
+import qualified Data.Map as M
 import Data.Maybe (maybe)
 import Data.Monoid
 import System.Exit
@@ -9,6 +10,7 @@ import XMonad.Config.Desktop
 import XMonad.Config.Gnome
 import XMonad.Config.Kde
 import XMonad.Config.Xfce
+import qualified XMonad.StackSet as W
 
 main = do
   session <- getEnv "DESKTOP_SESSION"
