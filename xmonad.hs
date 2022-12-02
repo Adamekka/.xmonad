@@ -12,10 +12,6 @@ import XMonad.Config.Kde
 import XMonad.Config.Xfce
 import qualified XMonad.StackSet as W
 
-main = do
-  session <- getEnv "DESKTOP_SESSION"
-  xmonad $ maybe desktopConfig desktop session
-
 desktop "gnome" = gnomeConfig
 desktop "kde" = kde4Config
 desktop "xfce" = xfceConfig
@@ -159,7 +155,36 @@ myManageHook =
 
 -- Event handling
 myEventHook = mempty
+
 -- Status bars and logging
 myLogHook = return ()
+
 -- Startup hook
 myStartupHook = return ()
+
+main = do
+  xmonad defaults
+  session <- getEnv "DESKTOP_SESSION"
+  xmonad $ maybe desktopConfig desktop session
+
+defaults =
+  def
+    { -- simple stuff
+      terminal = myTerminal,
+      focusFollowsMouse = myFocusFollowsMouse,
+      clickJustFocuses = myClickJustFocuses,
+      borderWidth = myBorderWidth,
+      modMask = myModMask,
+      workspaces = myWorkspaces,
+      normalBorderColor = myNormalBorderColor,
+      focusedBorderColor = myFocusedBorderColor,
+      -- key bindings
+      keys = myKeys,
+      mouseBindings = myMouseBindings,
+      -- hooks, layouts
+      layoutHook = myLayout,
+      manageHook = myManageHook,
+      handleEventHook = myEventHook,
+      logHook = myLogHook,
+      startupHook = myStartupHook
+    }
