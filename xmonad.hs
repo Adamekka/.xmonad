@@ -2,6 +2,8 @@
 
 import System.Posix.Env (getEnv)
 import Data.Maybe (maybe)
+import Data.Monoid
+import System.Exit
 
 import XMonad
 import XMonad.Config.Desktop
