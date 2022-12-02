@@ -29,7 +29,7 @@ myClickJustFocuses :: Bool
 myClickJustFocuses = False
 
 -- Width of window border in pixels
-myBorderWidth = 1
+myBorderWidth = 2
 
 -- Set ModMask to super key
 -- mod1Mask = left alt
