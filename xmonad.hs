@@ -26,3 +26,6 @@ myTerminal = "alacritty"
 
 myFocusFollowsMouse :: Bool
 myFocusFollowsMouse = True
+
+myClickJustFocuses :: Bool
+myClickJustFocuses = False
