@@ -148,3 +148,11 @@ myLayout = tiled ||| Mirror tiled ||| Full
 
     -- Percent of screen to increment by when resizing panes
     delta = 3 / 100
+
+-- Window rules
+myManageHook =
+  composeAll
+    [ className =? "Gimp" --> doFloat,
+      resource =? "desktop_window" --> doIgnore,
+      resource =? "kdesktop" --> doIgnore
+    ]
