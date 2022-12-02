@@ -53,7 +53,7 @@ myKeys conf@XConfig {XMonad.modMask = modm} =
       -- dmenu
       ((modm, xK_y), spawn "dmenu_run"),
       -- flameshot
-      ((modm .|. shiftMask, xK_p), spawn "flameshot gui"),
+      ((modm .|. shiftMask, xK_s), spawn "flameshot gui"),
       -- thunar
       ((modm, xK_e), spawn "thunar"),
       -- Close focused window
