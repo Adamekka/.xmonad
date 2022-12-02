@@ -134,7 +134,7 @@ myMouseBindings XConfig {XMonad.modMask = modm} =
     ]
 
 -- Layouts
-myLayout = tiled ||| Mirror tiled ||| Full
+myLayout = avoidStruts (tiled ||| Mirror tiled ||| Full)
   where
     -- default tiling algorithm partitions the screen into two panes
     tiled = Tall nmaster delta ratio
@@ -168,10 +168,10 @@ myStartupHook = do
   spawnOnce "picom &"
 
 main = do
+  xmonad $ docks defaults
   xmproc <- spawnPipe "xmobar -x 0 /home/adamekka/.config/xmobar/xmobar.hs"
   session <- getEnv "DESKTOP_SESSION"
   xmonad $ maybe desktopConfig desktop session
-  xmonad $ docks defaults
 
 defaults =
   def
