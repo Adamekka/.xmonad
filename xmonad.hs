@@ -10,6 +10,7 @@ import XMonad.Config.Desktop
 import XMonad.Config.Gnome
 import XMonad.Config.Kde
 import XMonad.Config.Xfce
+import XMonad.Hooks.ManageDocks
 import qualified XMonad.StackSet as W
 import XMonad.Util.Run
 import XMonad.Util.SpawnOnce
@@ -168,9 +169,9 @@ myStartupHook = do
 
 main = do
   xmproc <- spawnPipe "xmobar -x 0 /home/adamekka/.config/xmobar/xmobar.hs"
-  xmonad defaults
   session <- getEnv "DESKTOP_SESSION"
   xmonad $ maybe desktopConfig desktop session
+  xmonad $ docks defaults
 
 defaults =
   def
