@@ -23,3 +23,6 @@ desktop "xmonad-mate" = gnomeConfig
 desktop _ = desktopConfig
 
 myTerminal = "alacritty"
+
+myFocusFollowsMouse :: Bool
+myFocusFollowsMouse = True
