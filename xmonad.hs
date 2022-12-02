@@ -54,7 +54,9 @@ myKeys conf@XConfig {XMonad.modMask = modm} =
     -- Terminal
     [ ((modm, xK_Return), spawn $ XMonad.terminal conf),
       -- dmenu
-      ((modm, xK_y), spawn "dmenu_run"),
+      ((modm .|. shiftMask, xK_y), spawn "dmenu_run"),
+      -- rofi
+      ((modm, xK_y), spawn "rofi -show drun"),
       -- flameshot
       ((modm .|. shiftMask, xK_s), spawn "flameshot gui"),
       -- thunar
@@ -167,6 +169,7 @@ myStartupHook = do
   spawnOnce "nitrogen --restore &"
   spawnOnce "picom &"
   spawnOnce "xmobar &"
+  spawnOnce "gnome-keyring-daemon -s"
 
 main = do
   xmonad $ docks defaults
