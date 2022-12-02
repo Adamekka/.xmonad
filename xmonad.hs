@@ -43,3 +43,8 @@ myBorderWidth = 1
 myModMask = mod4Mask
 
 myWorkspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+
+-- Border colors for unfocused and focused windows
+myNormalBorderColor = "#dddddd"
+
+myFocusedBorderColor = "#0000ff"
