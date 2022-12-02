@@ -21,3 +21,5 @@ desktop "kde" = kde4Config
 desktop "xfce" = xfceConfig
 desktop "xmonad-mate" = gnomeConfig
 desktop _ = desktopConfig
+
+myTerminal = "alacritty"
