@@ -21,6 +21,7 @@ desktop "xfce" = xfceConfig
 desktop "xmonad-mate" = gnomeConfig
 desktop _ = desktopConfig
 
+myTerminal :: String
 myTerminal = "alacritty"
 
 -- Whether focus follows the mouse pointer
@@ -32,6 +33,7 @@ myClickJustFocuses :: Bool
 myClickJustFocuses = False
 
 -- Width of window border in pixels
+myBorderWidth :: Dimension
 myBorderWidth = 2
 
 -- Set ModMask to super key
